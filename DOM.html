@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    <h1>网页标题</h1>
+    <script>
+    document.addEventListener("click", function(){
+    document.body.innerHTML = document.activeElement;
+    var box = document.createElement('div');
+    document.body.appendChild(box);
+    var att = document.createAttribute('id');
+    att.value = "myDiv";
+    document.getElementsByTagName('div')[0].setAttributeNode(att);
+    document.getElementById("myDiv").innerHTML = Math.random();
+    var btn = document.createElement("button");
+    var t = document.createTextNode("按钮");
+    btn.appendChild(t);
+    document.body.appendChild(btn);
+    var att = document.createAttribute('onclick');
+    att.value = "myfunction()";
+    document.getElementsByTagName('button')[0].setAttributeNode(att);
+});
+function myfunction(){
+    alert(document.title);
+}
+    </script>
+</body>
+</html>

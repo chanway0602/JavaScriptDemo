@@ -6,15 +6,33 @@
 </head>
 <body>
     <h1>网页标题</h1>
+    <button type="button" onclick="showtext()">please click this button</button>
+    <button type="button" onmousemove="showalert()">please move mouse here</button>
     <script>
-        var xxx = "hello world";
-        var yyy = ['111', '222', '333'];
-        for (var i of xxx){
-            document.write(i);
+        function showtext(){
+            window.alert('111')
         }
-        for (var k of yyy){
-            document.write(k);
+
+        function showalert(){
+            window.alert('222')
         }
+
+        var person = {
+            'name':'Bob',
+            'age':'26',
+            'gender':'man',
+            'disPlayName':function(){
+                //window.alert('my name is ' + this.name)
+            }
+        }
+        person['name'] = 'May';
+        person['disPlayName']();
+
+        var str = new String('abc');
+        console.log(str.length);
+
+        var time = Date(50000);
+        console.log(time);
     </script>
 </body>
 </html>

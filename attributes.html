@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+    <a href="javascript:;" target="_blank" id="myLink">JavaScript</a><br>
+    <script type="text/javascript">
+        var atag = document.getElementById('myLink');
+        var attr = atag.attributes;
+        document.write(attr.target.value + "<br>");                 // 输出：_blank
+        document.write(attr.target.name + "<br>");                  // 输出：target
+        document.write(attr.target.specified + "<br>");             // 输出：true
+        document.write(attr.getNamedItem('href').textContent + "<br>");  // 输出：javascript:;
+        document.write(attr.item(0).name + "<br>");                 // 输出：href
+        document.write(attr.length + "<br>");                       // 输出：3
+        document.write(attr.removeNamedItem('target') + "<br>");    // 输出：[object Attr]
+        var cla = document.createAttribute('class');
+        cla.value = 'democlass';
+        document.write(attr.setNamedItem(cla) + "<br>");            // 输出：null
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+    <button onclick="myBack()">back()</button>
+    <button onclick="myForward()">forward()</button>
+    <button onclick="myGo()">go()</button>
+    <button onclick="myPushState()">pushState()</button>
+    <button onclick="myReplaceState()">replaceState()</button><br>
+    <script type="text/javascript">
+        document.write(history.length + "<br>");
+        document.write(history.scrollRestoration + "<br>");
+        document.write(history.state + "<br>");
+    
+        function myBack(){
+            history.back();
+        }
+        function myForward(){
+            history.forward();
+        }
+        function myGo(){
+            var num = prompt('请输入一个整数', '1');
+            history.go(num);
+        }
+        function myPushState(){
+            var state = { 'page_id': 1, 'user_id': 5 }
+            var title = 'JavaScript'
+            var url = 'index.html'
+            history.pushState(state, title, url)
+            console.log(history.state);
+        }
+        function myReplaceState(){
+            var state = { 'page_id': 3, 'user_id': 5 }
+            var title = 'history'
+            var url = 'index.html'
+            history.replaceState(state, title, url)
+            console.log(history.state);
+        }
+    </script>
+</body>
+</html>
+
