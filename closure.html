@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script type="text/javascript">
+        'use strict'
+
+        /*
+        //闭包的基本写法，注意one函数返回的是函数名
+        function one(){
+            var num = 0;
+            function two(){
+                num++;
+                return num;
+            }
+            return two;
+        }
+        
+        var func = one(); 
+        */
+
+        //闭包的高级写法，与匿名函数结合，注意最后有（），表示调用
+        var func = function(){
+            var num = 0;
+            return function(){
+                num++;
+                return num;
+            }
+        }();
+        
+        console.log(func());
+        console.log(func());
+        console.log(func());
+    </script>
+</body>
+</html>
