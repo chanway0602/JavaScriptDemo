@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var num = prompt('please input a num', '0')
+        try{
+            if(num > 0){
+                window.alert('num > 0')
+            }
+            else{
+                throw Error('catch error!') //抛出异常，并创建错误对象，输入错误信息
+            }
+        }
+        catch(e){
+            window.alert(e.message) //捕获异常，获取错误信息
+        }
+        finally{
+            window.alert('process finally') 
+        }
+    </script>
+</body>
+</html>
