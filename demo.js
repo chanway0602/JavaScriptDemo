@@ -1,8 +1,13 @@
-var res = window.confirm('yes or no?');
-if (res == true){
-    window.alert('yes');
-}
-else{
-    window.alert('no');
-}
+'use strict'
+
+var fs = require('fs');
+
+fs.readFile('sample.txt', 'utf-8', function (err, data) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(data);
+    }
+});
+
 
